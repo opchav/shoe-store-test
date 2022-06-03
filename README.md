@@ -55,10 +55,12 @@ You can run it directly from your own machine.
 Run the following to start tapping into the inventory events.
 
 ```
-(bin/)websocketd --port=8080 ruby inventory.rb
+(bin/)websocketd --port=8080 --staticdir=app/ ruby inventory.rb
 ```
 
 You now have an active connection to their stores opened on port 8080.
+
+You also have a custom UI on [localhost:8080](http://localhost:8080)
 
 ### Start listening on each event
 
