@@ -82,7 +82,9 @@
         const { key, store, model, inventory } = item;
         const rowEl = document.querySelector(`#${key}`);
 
-        const rowCols = `<td>${store}</td><td>${model}</td><td>${inventory}</td>`;
+        const rowCols = `<td>${store}</td><td>${model}</td>${inventoryCol(
+          inventory
+        )}`;
 
         if (!rowEl) {
           tableBodyEl.insertAdjacentHTML(
@@ -97,6 +99,15 @@
           }
         }
       });
+    }
+
+    function inventoryCol(value) {
+      if (value < 5) {
+        return `<td class="inventory__table--risk">${value}</td>`;
+      } else if (value < 15) {
+        return `<td class="inventory__table--low">${value}</td>`;
+      }
+      return `<td>${value}</td>`;
     }
 
     function render() {

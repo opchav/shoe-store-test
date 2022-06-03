@@ -177,3 +177,10 @@ a:active {
 .inventory__table th {
   text-align: left;
 }
+
+.inventory__table--risk {
+  background-color: #ff5722;
+}
+.inventory__table--low {
+  background-color: #ffcc80;
+}
